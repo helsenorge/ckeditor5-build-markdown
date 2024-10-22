@@ -2,41 +2,18 @@
   "name": "@helsenorge/ckeditor5-build-markdown",
   "author": "Helsenorge",
   "description": "Custom CKEditor5 for editing basic markdown.",
-  "version": "24.0.0",
+  "version": "25.0.0",
   "license": "GPL2+",
   "private": false,
   "main": "./build/ckeditor.js",
+  "type": "module",
   "files": [
     "build"
   ],
-  "devDependencies": {
-    "@ckeditor/ckeditor5-autoformat": "^24.0.0",
-    "@ckeditor/ckeditor5-basic-styles": "^24.0.0",
-    "@ckeditor/ckeditor5-block-quote": "^24.0.0",
-    "@ckeditor/ckeditor5-dev-utils": "^23.6.1",
-    "@ckeditor/ckeditor5-dev-webpack-plugin": "^23.6.1",
-    "@ckeditor/ckeditor5-editor-classic": "^24.0.0",
-    "@ckeditor/ckeditor5-essentials": "^24.0.0",
-    "@ckeditor/ckeditor5-heading": "^24.0.0",
-    "@ckeditor/ckeditor5-link": "^24.0.0",
-    "@ckeditor/ckeditor5-list": "^24.0.0",
-    "@ckeditor/ckeditor5-markdown-gfm": "^24.0.0",
-    "@ckeditor/ckeditor5-paragraph": "^24.0.0",
-    "@ckeditor/ckeditor5-paste-from-office": "^24.0.0",
-    "@ckeditor/ckeditor5-table": "^24.0.0",
-    "@ckeditor/ckeditor5-theme-lark": "^24.0.0",
-    "@ckeditor/ckeditor5-typing": "^24.0.0",
-    "css-loader": "^5.0.1",
-    "postcss": "^8.2.3",
-    "postcss-loader": "^4.1.0",
-    "raw-loader": "^4.0.2",
-    "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^4.2.3",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.3.1"
-  },
   "scripts": {
-    "build": "webpack --mode production"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -51,5 +28,16 @@
   "bugs": {
     "url": "https://github.com/helsenorge/ckeditor5-build-markdown/issues"
   },
-  "homepage": "https://github.com/helsenorge/ckeditor5-build-markdown"
+  "homepage": "https://github.com/helsenorge/ckeditor5-build-markdown",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "postcss-import": "^16.0.0",
+    "vite-plugin-static-copy": "^2.0.0"
+  },
+  "dependencies": {
+    "ckeditor5": "^43.0.0",
+    "vite": "^5.0.0"
+  }
 }
