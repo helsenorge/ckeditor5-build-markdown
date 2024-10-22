@@ -1,15 +1,23 @@
-import { initializeEditor } from "./ckeditor"; // Ensure the correct path
-// Initialize the CKEditor when the document is ready
-import "../node_modules/ckeditor5/dist/ckeditor5.css";
-import "../node_modules/ckeditor5/dist/ckeditor5-editor.css";
-import "../node_modules/ckeditor5/dist/ckeditor5-content.css";
+import MarkdownEditor from "./ckeditor"; // Adjust the path if necessary
 
 document.addEventListener("DOMContentLoaded", () => {
-  initializeEditor(".editor")
+  // Select the element where CKEditor should be applied
+  const editorElement = document.querySelector<HTMLElement>(".editor");
+
+  if (!editorElement) {
+    console.error("Editor element not found!");
+    return;
+  }
+
+  // Initialize the editor
+  MarkdownEditor.create(editorElement)
     .then((editor) => {
-      console.log("Editor initialized:", editor);
+      console.log("Editor is ready to use!", editor);
+      (
+        window as Window & typeof globalThis & { editor: MarkdownEditor }
+      ).editor = editor; // Optional: make editor available globally for debugging
     })
     .catch((error) => {
-      console.error("Error initializing the editor:", error);
+      console.error("There was a problem initializing the editor:", error);
     });
 });

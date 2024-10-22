@@ -4,8 +4,7 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 import postcssImport from "postcss-import";
 import autoprefixer from "autoprefixer";
 
-export default defineConfig(({ isPreview, command }) => {
-  const dev = command === "serve" && !isPreview;
+export default defineConfig(() => {
   return {
     root: path.resolve(__dirname, ""),
     resolve: {
